@@ -1,0 +1,24 @@
+# Ignorar todos los archivos .dat
+*.dat
+
+# Ignorar todos los archivos .csv
+*.csv
+
+# Ignorar todos los archivos .jpeg
+*.jpeg
+
+# Ignorar todos los archivos .png
+*.png
+
+
+
+# Ignorar archivos PDF de trabajos de grado
+Trabajo-Grado-*.pdf
+
+# Ignorar el archivo .txt
+*.txt
+
+# Ignorar el entorno virtual de Python
+venv/
+
+
