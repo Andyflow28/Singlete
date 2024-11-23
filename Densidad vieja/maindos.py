@@ -38,7 +38,7 @@ for input_file, zeta_value in input_files:
 
         # Interpolar para obtener valores entre el rango deseado
         f_interpolate = interp1d(energy, frequency, kind='linear', fill_value="extrapolate")
-        energy_new = np.linspace(0, 3, num=100)  # Crear 100 puntos entre 0 y 1.90
+        energy_new = np.linspace(0, 8, num=100)  # Crear 100 puntos entre 0 y 1.90
         frequency_new = f_interpolate(energy_new)
 
         # Graficar la interpolación
@@ -50,7 +50,7 @@ for input_file, zeta_value in input_files:
 plt.title('Gráfico de Frecuencia vs. Energía')
 plt.xlabel('Energía (eV)')
 plt.ylabel(r'Frecuencia ($\omega$)')
-plt.xlim(0, 3)  # Establecer límites del eje X entre 0 y 1.90
+plt.xlim(0, 8)  # Establecer límites del eje X entre 0 y 1.90
 plt.grid()
 plt.legend()  # Mostrar la leyenda
 plt.savefig('grafico_frecuencia_vs_energia_dos.png')  # Guarda el gráfico como un archivo PNG

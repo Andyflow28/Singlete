@@ -7,7 +7,7 @@
 
 float A[100], B[100];
 double DOS,f,g, normalizacion;
-double En = -0.4;
+double En = -0.04;
 double Hop_t = -0.2;
 /*
 double En= 0.4;
@@ -29,7 +29,7 @@ double dos_f(double x);
 int main(void)  {
 
     double LowerLimitDx = M_PI- acos(En/(4*Hop_t));
-    double Delta0 = 24.0*sqrt(2.0);
+    double Delta0 = 33.90;
 
     FILE *fp;
 
