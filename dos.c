@@ -43,7 +43,7 @@ int main(void)  {
             fscanf(fp, "%f", &B[j]);
         }
         fclose(fp);
-        
+          
         FILE *dos;
         printf("%s\n",DOS_names[i]);
         dos=fopen(DOS_names[i],"w");

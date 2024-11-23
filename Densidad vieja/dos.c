@@ -3,12 +3,9 @@
 #include <math.h>
 
 #include "Qromb.h"
-#include "Qromb.c"
-#include "Utils.h"
-#include "Utils.c"
 
 
-float A[1000], B[1000];
+float A[100], B[100];
 double DOS,f,g, normalizacion;
 double En = -0.4;
 double Hop_t = -0.2;
@@ -16,7 +13,7 @@ double Hop_t = -0.2;
 double En= 0.4;
 double Hop_t=-0.2;
 */
-int N=1000;
+int N=100;
 int n;
 #ifndef M_PI
 #define M_PI   3.14159265358979323846
@@ -32,16 +29,12 @@ double dos_f(double x);
 int main(void)  {
 
     double LowerLimitDx = M_PI- acos(En/(4*Hop_t));
-    double Delta0 = 1
-
-    /*24.0*sqrt(2.0)*/;
+    double Delta0 = 24.0*sqrt(2.0);
 
     FILE *fp;
 
-    /* char* file_names[] = {"c0g001.dat", "c0g005.dat", "c0g010.dat", "c0g015.dat", "c0g020.dat"}; para c=0 */
-    char* file_names[] = {"g0001delta0=1.dat", "g0005delta0=1.dat", "g0010delta0=1.dat", "g0015delta0=1.dat", "g0020delta0=1.dat"};
-    /*char* DOS_names[] = {"DOSc0g001.dat","DOSc0g005.dat","DOSc0g010.dat","DOSc0g015.dat", "DOSc0g020.dat"};*/ 
-    char* DOS_names[] = {"DOSc0g0001.dat","DOSc0g0005.dat","DOSc0g0010.dat","DOSc0g0015.dat", "DOSc0g0020.dat" }; 
+    char* file_names[] = {"c0g001.dat", "c0g005.dat", "c0g010.dat", "c0g015.dat", "c0g020.dat"};
+    char* DOS_names[] = {"DOSc00g000E04t02.dat","DOSc00g005E04t02.dat","DOSc00g010E04t02.dat","DOSc00g015E04t02.dat", "DOSc00g020E04t02.dat"};
 
     for(int i=0; i<5; i++){
         fp = fopen(file_names[i], "r");
@@ -50,7 +43,7 @@ int main(void)  {
             fscanf(fp, "%f", &B[j]);
         }
         fclose(fp);
-        
+          
         FILE *dos;
         printf("%s\n",DOS_names[i]);
         dos=fopen(DOS_names[i],"w");
@@ -67,9 +60,7 @@ int main(void)  {
 /********************************************************************************************************************/
 double Func1(double x)
 {
-    double  result, aux3, aux4, rho_k, a_k, b, positive_k, Delta0 = 1
-
-    /*24.0*sqrt(2.0)*/;
+    double  result, aux3, aux4, rho_k, a_k, b, positive_k, Delta0 = 24.0*sqrt(2.0);
 
     float aux1, z, aux2, vx, vz, cos_x, sin_x, jacobian;
     float vel, cos_z, sin_z, der_zx, factor;
@@ -105,8 +96,7 @@ double Func1(double x)
 /***********************************************************************************************************************/
 double Func2(double x)
 {	
-    double  result, aux3, aux4, rho_k, a_k, b, negative_k, Delta0 = 1
-    /*24.0*sqrt(2.0)*/;
+    double  result, aux3, aux4, rho_k, a_k, b, negative_k, Delta0 = 24.0*sqrt(2.0);
 
     float aux1, z, aux2, vx, vz, cos_x, sin_x, jacobian;
     float vel, cos_z, sin_z, der_zx, factor;
